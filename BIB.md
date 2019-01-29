@@ -1,10 +1,12 @@
 # Annotated Bibliography
 > This is a simple/rough working list of resources & captions -- nothing fancy
 
+
 ### [Creating A Low-Cost Autonomous Vehicle](http://isl.ecst.csuchico.edu/DOCS/Logs/Michael/Files/web_link_files/low_cost.pdf)
 
 - Used GPS
 - 2002, so not too useful
+
 
 ### [Autonomous Ship Hull Inspection by Omnidirectional Path and View](http://srv.uib.es/public/AUV2016/pdf/SP7.pdf)
 
@@ -34,7 +36,9 @@
   - **ROS may be worth using if OS is needed**
 - Sensors are very expensive
 
+
 ### [2016 IEEE/OES Autonomous Underwater Vehicles Conference list of papers](http://toc.proceedings.com/32600webtoc.pdf)
+
 
 ### [Surveillance of Coral Reef Development Using an Autonomous Underwater Vehicle](http://srv.uib.es/public/AUV2016/pdf/SP3.pdf)
 
@@ -60,9 +64,26 @@
     - each behavior casts a weighted vote for what the bot should do
     - `defuzzification` -- new favorite word?
 
+
 ### [TeraRanger Evo Inexpensive LiDAR](http://www.teraranger.com/product/teraranger-evo/)
 
 - Less than \$200
+
+
+### [SparkFun TFMini Micro LiDAR Module](https://www.sparkfun.com/products/14588)
+
+- \$40
+- Communicates over 3.3V UART at 115200 baud
+- `This product does not use laser light for ranging. Instead it contains an LED and optics. Many such systems are being marketed under the name "LiDAR," although it may be more appropriate to think of this device as a "Time-of-Flight Infrared Rangefinder". It differs significantly from traditional IR rangefinders in that it uses ToF to determine range and not triangulation — as is performed by the Sharp GP-series devices.`
+
+
+### [SparkFun LiDAR-Lite v3](https://www.sparkfun.com/products/14032)
+
+- \$130 sensor from Garmin™
+- Interfaced via I2C or PWM
+- 5V <100mA
+- 40 meter
+
 
 ### [Optical Sensors and Methods for Underwater 3D Reconstruction](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4721784/)
 
@@ -89,6 +110,7 @@
     - Structure from Motion
     - Stereo Vision
     - Underwater Photogrammetry
+- [Table](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4721784/table/sensors-15-29864-t009/?report=objectonly) overviewing strengths and weaknesses of sensors and techniques for 3D reconstruction
 - **TODO: Read more of these sensors**
 
 
