@@ -1,7 +1,7 @@
 # Annotated Bibliography
 > This is a simple/rough working list of resources & captions -- nothing fancy
 
-### [Creating A Low-Cost Autonomous Vehicle (paper)](http://isl.ecst.csuchico.edu/DOCS/Logs/Michael/Files/web_link_files/low_cost.pdf)
+### [Creating A Low-Cost Autonomous Vehicle](http://isl.ecst.csuchico.edu/DOCS/Logs/Michael/Files/web_link_files/low_cost.pdf)
 
 - Used GPS
 - 2002, so not too useful
