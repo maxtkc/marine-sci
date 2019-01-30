@@ -115,3 +115,30 @@
 
 
 ### [BreezySLAM LiDAR SLAM Open Source Library for Python (and c/cpp/java/matlab)](https://github.com/simondlevy/BreezySLAM)
+
+
+### [SLAM Lectures](https://www.youtube.com/playlist?list=PLpUPoM7Rgzi_7YWn14Va2FODh7LzADBSm)
+
+- Lectures go over SLAM from the ground up, working towards a robot that uses SLAM completely
+
+
+### [RI Seminar: Matthew Johnson-Roberson : Underwater mapping: new robotic approaches to an old problem](https://www.youtube.com/watch?v=jbiPFUxP8h8)
+
+- Very few high resolution (<5cm per pixel) underwater maps are available
+- Old methods
+  - Leadline (drop lead on a line)
+  - Single Beam Sonar
+  - Multibeam Sonar (similar to lidar)
+- Modern Methods
+  - stereo cameras: can work, but only very close up
+  - lidar: can work, not as easy as above water
+  - satellite: cannot penetrate water
+- Large scale ROV's are very expensive in many ways
+  - Tether is huge
+  - Million dollar ROV's
+  - Pay for driver
+  - Brought out with a boat and crane
+- Bundle adjustment helps
+- Talks about mapping hull bottoms
+- Uses camera image data to texture 3d maps
+  - Makes them more visually appealing for humans
