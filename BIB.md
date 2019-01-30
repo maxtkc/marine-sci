@@ -155,3 +155,8 @@
 - \$99
 - `scanning frequency reached 5.5 hz when sampling 1450 points each round`
 - Rotating! That would make the electricals/mechanicals a lot easier
+
+
+### [Jaffe Laboratory for Underwater Imaging](http://jaffeweb.ucsd.edu/)
+
+- 9 projects relating to underwater imaging
