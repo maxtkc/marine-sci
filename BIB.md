@@ -144,3 +144,14 @@
 - Uses camera image data to texture 3d maps
   - Makes them more visually appealing for humans
 - TODO: Rewatch and take notes
+
+### [DF Robot TF Mini LiDAR(ToF) Laser Range Sensor](https://www.dfrobot.com/product-1702.html)
+
+- \$40
+- Static laser LiDAR
+
+### [DF Robot RPLIDAR A1M8 - 360 Degree Laser Scanner Development Kit](https://www.dfrobot.com/product-1125.html)
+
+- \$99
+- `scanning frequency reached 5.5 hz when sampling 1450 points each round`
+- Rotating! That would make the electricals/mechanicals a lot easier
