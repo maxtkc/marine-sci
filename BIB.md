@@ -120,6 +120,7 @@
 ### [SLAM Lectures](https://www.youtube.com/playlist?list=PLpUPoM7Rgzi_7YWn14Va2FODh7LzADBSm)
 
 - Lectures go over SLAM from the ground up, working towards a robot that uses SLAM completely
+- Worth watching if doing SLAM project
 
 
 ### [RI Seminar: Matthew Johnson-Roberson : Underwater mapping: new robotic approaches to an old problem](https://www.youtube.com/watch?v=jbiPFUxP8h8)
@@ -142,3 +143,4 @@
 - Talks about mapping hull bottoms
 - Uses camera image data to texture 3d maps
   - Makes them more visually appealing for humans
+- TODO: Rewatch and take notes
