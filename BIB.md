@@ -116,6 +116,8 @@
 
 ### [BreezySLAM LiDAR SLAM Open Source Library for Python (and c/cpp/java/matlab)](https://github.com/simondlevy/BreezySLAM)
 
+- 
+
 
 ### [SLAM Lectures](https://www.youtube.com/playlist?list=PLpUPoM7Rgzi_7YWn14Va2FODh7LzADBSm)
 
@@ -160,3 +162,41 @@
 ### [Jaffe Laboratory for Underwater Imaging](http://jaffeweb.ucsd.edu/)
 
 - 9 projects relating to underwater imaging
+
+
+### [OpenSLAM](https://openslam-org.github.io/)
+
+- A couple dozen projects working with SLAM algorithms
+- Fantastic set of resources!!
+  - Papers, libraries, datasets, people
+- Some are a bit old
+- A variety of 2d/3d, sensors, strategies
+
+### [SSS-SLAM: An Object Oriented Matlab Framework for Underwater SLAM using Side Scan Sonar](http://www.ja2014.upv.es/wp-content/uploads/papers/paper_48.pdf)
+
+- `Side Scan Sonars (SSS) are frequently used by Autonomous Underwater Vehicles (AUV) to observe the sea floor.`
+- A bit old, but could be very useful resource for using SSS
+- Created impressive trajectories improving upon the dead reckoning techniques as well as mosaics to visualize the acoustic images
+- Everything is open source (including dataset)
+
+
+### [Underwater 3-D Scene Reconstruction Using Kinect v2 Based on Physical Models for Refraction and Time of Flight Correction](https://www.researchgate.net/publication/318869088_Underwater_3D_Scene_Reconstruction_Using_Kinect_v2_Based_on_Physical_Models_for_Refraction_and_Time_of_Flight_Correction)
+
+- 2017 (recent)
+- Point cloud data up to 650 mm
+- Created a waterproof housing for the Kinect (publicly available)
+- `Applications such as coral reef mapping and underwater SLAM in shallow waters for ROV’s can be a viable application area that can beneﬁt from results achieved`
+- They have to correct for the refraction of the air -> perspex (container) -> water
+
+
+### [Underwater Distance Measurement/Sensing (Build your own, StackExchange)](https://electronics.stackexchange.com/questions/55804/underwater-distance-measurement-sensing)
+
+- Explains how to build your own lidar sensor, and what the constraints are
+- `Why this works with a laser but not necessarily with UV LEDs: 
+The light from an LED is not collimated, hence does not get significantly intensified in the return direction, whereas a combination of reflection and diffraction causes significant pulsed intensification of such returned signal for a collimated laser beam, by speckle pattern formation.`
+- 
+
+
+### [Hector SLAM without odometry data on ROS with the RPLidar A1](https://github.com/NickL77/RPLidar_Hector_SLAM)
+
+- Requires ROS Kinetic
