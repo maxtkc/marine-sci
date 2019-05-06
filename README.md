@@ -34,3 +34,11 @@ In this meeting, Professor Howe and I discussed potential goals for the semester
   - Sailboat race (or underwater race)
   - Fish tracking
   - Mapping
+
+
+### Notes
+
+#### Run rviz on hector slam (no odom)
+`roscore`
+`rviz -d src/RPLidar_Hector_SLAM/hector_slam/hector_slam_launch/rviz_cfg/mapping_demo.rviz`
+`rosbag play 2019-05-06-14-45-20.bag`
