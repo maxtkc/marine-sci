@@ -200,3 +200,8 @@ The light from an LED is not collimated, hence does not get significantly intens
 ### [Hector SLAM without odometry data on ROS with the RPLidar A1](https://github.com/NickL77/RPLidar_Hector_SLAM)
 
 - Requires ROS Kinetic
+
+
+### [Comparison of Gmapping and Hector SLAM Paper](https://openi.nlm.nih.gov/detailedresult?img=PMC4299068_sensors-14-23365f9&req=4)
+
+- Authors use Kinect and compare the two algorithms. They both work pretty well.
