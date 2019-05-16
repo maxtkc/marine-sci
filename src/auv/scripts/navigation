@@ -1,0 +1,83 @@
+#!/usr/bin/env python
+
+# Subscribes to /slam_out_pose (geometry_msgs/PoseStamped) and /targets (Pose2D[])
+
+# Uses linear x (-1, 1) and angular z (-1, 1)
+
+import rospy
+
+from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Pose2D
+from geometry_msgs.msg import PoseStamped
+
+import math
+
+targets = []
+current_target_i = 0
+threshold = .25
+
+def push_target(data):
+    rospy.loginfo("Added target #%s: (%s, %s)", len(targets), data.x, data.y)
+    targets.append(data)
+
+def set_controls(data):
+    global current_target_i
+    global threshold
+    global pub
+
+    if(current_target_i > len(targets)):
+        rospy.loginfo("Finished")
+        return None
+
+    d_x = targets[current_target_i].x - data.pose.position.x
+    d_y = targets[current_target_i].y - data.pose.position.y
+
+    # if in range of current target switch to the next target
+    if(math.hypot(d_x, d_y) < threshold):
+        rospy.loginfo("Reached target #%s: (%s, %s)", \
+            current_target_i, targets[current_target_i].x, targets[current_target_i].y)
+        current_target_i += 1
+        return set_controls(data)
+
+    # set the speed/r to the distance to the target
+    r = math.hypot(d_x, d_y)
+
+    # set the turn angle/theta to the difference between the current angle and the target angle
+    theta = data.pose.orientation.z - math.atan(d_y/d_x)
+
+    # publish it to the /drive topic
+    rospy.loginfo("r: %s, theta: %s", r, theta)
+    #TODO: Actually publish the topic
+    vel_msg = Twist()
+
+    vel_msg.linear.x = r
+    vel_msg.linear.y = 0
+    vel_msg.linear.z = 0
+    vel_msg.angular.x = 0
+    vel_msg.angular.y = 0
+    vel_msg.angular.z = theta
+    pub.publish(vel_msg)
+
+def listener():
+
+    global pub
+
+    # In ROS, nodes are uniquely named. If two nodes with the same
+    # name are launched, the previous one is kicked off. The
+    # anonymous=True flag means that rospy will choose a unique
+    # name for our 'listener' node so that multiple listeners can
+    # run simultaneously.
+    rospy.init_node('navigation', anonymous=True)
+
+    rospy.Subscriber("targets", Pose2D, push_target)
+
+    rospy.Subscriber("slam_out_pose", PoseStamped, set_controls)
+
+    pub = rospy.Publisher('drive', Twist, queue_size=10)
+
+    # spin() simply keeps python from exiting until this node is stopped
+    rospy.spin()
+
+
+if __name__ == '__main__':
+    listener()

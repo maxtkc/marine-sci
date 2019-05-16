@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+
+# Subscribes to /drive and drives the auv
+# Uses linear x (-1, 1) and angular z (-1, 1)
+
+import rospy
+
+#PI from dual_g2_hpmd_rpi import motors, MAX_SPEED
+
+from geometry_msgs.msg import Twist
+
+# https://robotics.stackexchange.com/questions/2011/how-to-calculate-the-right-and-left-speed-for-a-tank-like-rover
+# assumes theta in degrees and r = 0 to 100 %
+# returns a tuple of percentages: (left_thrust, right_thrust)
+def throttle_angle_to_thrust(r, theta):
+    theta = ((theta + 180) % 360) - 180  # normalize value to [-180, 180)
+    r = min(max(0, r), 100)              # normalize value to [0, 100]
+    v_a = r * (45 - theta % 90) / 45          # falloff of main motor
+    v_b = min(100, 2 * r + v_a, 2 * r - v_a)  # compensation of other motor
+    if theta < -90: return -v_b, -v_a
+    if theta < 0:   return -v_a, v_b
+    if theta < 90:  return v_b, v_a
+    return v_a, -v_b
+
+def callback(data):
+    
+    rospy.loginfo(rospy.get_caller_id() + "r: %s, theta: %s", 100 * data.linear.x, -90 * data.angular.z)
+
+    thrusts = throttle_angle_to_thrust(100 * data.linear.x, -90 * data.angular.z)
+    rospy.loginfo(thrusts)
+
+    #PI rospy.loginfo("left: %s, right: %s", MAX_SPEED * thrusts[0] / 100, MAX_SPEED * thrusts[1] / 100)
+    #PI motors.setSpeeds(MAX_SPEED * thrusts[0] / 100, MAX_SPEED * thrusts[1] / 100)
+
+def listener():
+
+    #PI motors.enable()
+
+    # In ROS, nodes are uniquely named. If two nodes with the same
+    # name are launched, the previous one is kicked off. The
+    # anonymous=True flag means that rospy will choose a unique
+    # name for our 'listener' node so that multiple listeners can
+    # run simultaneously.
+    rospy.init_node('controls', anonymous=True)
+
+    rospy.Subscriber("drive", Twist, callback)
+
+    # spin() simply keeps python from exiting until this node is stopped
+    rospy.spin()
+    
+    #PI motors.disable()
+
+if __name__ == '__main__':
+    listener()
