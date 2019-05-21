@@ -25,7 +25,7 @@ def set_controls(data):
     global threshold
     global pub
 
-    if(current_target_i > len(targets)):
+    if(current_target_i >= len(targets)):
         rospy.loginfo("Finished")
         return None
 
