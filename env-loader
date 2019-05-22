@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# source /opt/ros/kinetic/env.sh
+
+source /home/ubuntu/catkin_ws/devel/setup.bash
+# source /home/username/path/to/workspace/setup.bash
+exec "$@"
