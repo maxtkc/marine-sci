@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+# license removed for brevity
+import rospy
+from geometry_msgs.msg import Pose2D
+
+targets = \
+[(0, 1), (1, 1), (1, 0), (0, 0)]
+
+
+def talker():
+    pub = rospy.Publisher('targets', Pose2D, queue_size=10)
+    rospy.init_node('box', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    for (x,y) in targets:
+        rospy.loginfo("adding target (%s, %s)", x, y)
+        target = Pose2D()
+        target.x = x
+        target.y = y
+        pub.publish(target)
+        rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass
